@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Home - DotOrbit</title>
         <link rel="icon" href="assets/img/icon.png" type="image/png" sizes="16x16" />
-
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
         <link rel="stylesheet" href="assets/css/jquery.bxslider.css" />
         <link rel="stylesheet" href="assets/css/animate.css" />
@@ -169,19 +169,19 @@
                         <div class="servicedescription"><p>Our Web Design & Development team have the expertise to offer you the best products for your projects.</p></div>
                     </div>
 
-                    <div class="serviceFlexItem">
+                    <div class="serviceFlexItem" id="service2">
                         <div class="serviceIcon"><i class="fas fa-code"></i></div>
                         <div class="servicetitle">Software <span class="colored">Development</span></div>
                         <div class="servicedescription"><p>We have an experienced team to develop any kind of software for you to make your project a success.</p></div>
                     </div>
 
-                    <div class="serviceFlexItem">
+                    <div class="serviceFlexItem" id="service3">
                         <div class="serviceIcon"><i class="fas fa-pen"></i></div>
                         <div class="servicetitle">Graphic <span class="colored">Design</span></div>
                         <div class="servicedescription"><p>We offer clean, clear and unique print designs with your company’s image in mind.</p></div>
                     </div>
 
-                    <div class="serviceFlexItem">
+                    <div class="serviceFlexItem" id="service4">
                         <div class="serviceIcon"><i class="fas fa-bullhorn"></i></div>
                         <div class="servicetitle">Digital <span class="colored">Marketing</span></div>
                         <div class="servicedescription"><p>Our team will create, manage, and deliver social media campaigns for your business</p></div>
@@ -240,7 +240,7 @@
                 <h1 id="add" class="sectionTitle title2">Recent <strong>Works</strong></h1>
 
                 <div class="workflexContainer mt-5">
-                    <div class="workFlexItem" id="service1">
+                    <div class="workFlexItem">
                         <div class="workdetails">
                             <img id="image" src="assets/img/work.jpg" alt="" />
                             <div class="IconForControl">
@@ -606,7 +606,6 @@
 
         <script src="assets/js/jquery.bxslider.min.js"></script>
         <script src="assets/js/animate.js"></script>
-        <script src="assets/js/jquery.waypoints.js"></script>
 
         <script defer src="assets/js/jquery.flexslider.js"></script>
 
@@ -654,15 +653,23 @@
             });
         </script>
 
-        <script type="text/javascript">
-            $("#service1").waypoint(
-                function (direction) {
-                    $("#service1").addClass("animated fadeInUp");
-                },
-                {
-                    offset: "120%",
-                }
-            );
+        <script>
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= $(".sectionTitle").offset().top - 100 || $(window).scrollTop() >= $(".sectionTitle").offset().top - 100) $("#service1").addClass("animate__animated animate__backInLeft");
+                else $("#service1").removeClass("animate__animated");
+            });
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= $(".sectionTitle").offset().top + -100 || $(window).scrollTop() >= $(".sectionTitle").offset().top - 100) $("#service2").addClass("animate__animated animate__fadeInDown");
+                else $("#service2").removeClass("animate__animated");
+            });
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= $(".sectionTitle").offset().top + -100 || $(window).scrollTop() >= $(".sectionTitle").offset().top - 100) $("#service3").addClass("animate__animated animate__fadeInUp");
+                else $("#service3").removeClass("animate__animated");
+            });
+            $(window).scroll(function () {
+                if ($(window).scrollTop() >= $(".sectionTitle").offset().top + -100 || $(window).scrollTop() >= $(".sectionTitle").offset().top - 100) $("#service4").addClass("animate__animated animate__backInRight");
+                else $("#service4").removeClass("animate__animated");
+            });
         </script>
 
         <script>
